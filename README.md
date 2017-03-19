@@ -25,17 +25,18 @@ Visit https://zonesql.github.io to download a compiled, optimised release of Zon
 
 The ZoneSQL full uncompiled  source can be downloaded using the following 2 
 commands. First clone the git repository. This will pull the repo into a 
-./zonesql/ directory:
+./zonesql directory:
 
     git clone https://github.com/zonesql/zonesql.git
 
-From here, run the following command to pull down all required dependencies:
+From here, run the following command to pull down all required third party git 
+repo dependencies such as dojo, ace editor, dgrid etc into the ./zonesql/src/ 
+directory
 
     bower install ./zonesql
 
-This will result in a local ZoneSQL package with full uncompiled source code 
-including all of it's dependencies. The bower install command will pull in third 
-party git repos such as dojo, ace editor, dgrid into the /src/ directory. 
+This will result in a local ZoneSQL installation with full uncompiled source code 
+including all of it's dependencies.  
 
 The following script is also supplied which will use the dojo tool to compile the 
 source js into a /dist/ directory should you wish to compile your changes:
