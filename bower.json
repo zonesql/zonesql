@@ -30,6 +30,5 @@
 	"authors": [
 		{ "name": "Adam", "homepage": "http://tando.com.au" }
 	],	
-	"private": true,
 	"license": "AGPL-1.0"
 }
