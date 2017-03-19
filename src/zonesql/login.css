@@ -1,0 +1,218 @@
+@import url(bootstrap.css);
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /*
+  background: url(https://dl.dropboxusercontent.com/u/159328383/background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  */
+}
+
+body {
+  background: transparent;
+  background:#F9F9F9;
+}
+
+body, input, button {
+	font-family: tahoma, verdana, robotica, sans-serif;
+}
+
+.login {
+  padding: 15px;
+  width: 400px;
+  min-height: 400px;
+  margin: 2% auto 0 auto;
+  text-align:center;
+}
+
+.login h2 {
+  font-size: 1.5em;
+  font-weight: 300;
+  /*color: rgba(255, 255, 255, 0.7);*/
+  color:black;
+  display: inline-block;
+  padding-bottom: 5px;
+  /*text-shadow: 1px 1px 3px #23203b;*/
+  background-image:url(../../img/favicon32x32.png);
+  background-position:0 1px;
+  background-repeat:no-repeat;
+  background-size:32px 32px;
+  padding-left:38px;
+  line-height:32px;
+
+}
+.login form {
+  border:1px solid #D8DEE2;
+  background-color:white;
+  padding:20px;
+  margin-top:10px;
+	
+}
+
+.login form .input-group {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom:20px;
+}
+.login form .input-group:last-of-type {
+  border-top: none;
+}
+
+.login form .input-group-addon {
+	padding-top:5px;
+}
+
+.login form .input-group span {
+  background: transparent;
+  min-width: 53px;
+  border: none;
+}
+.login form .input-group span i {
+	/*
+	font-size: 1.2em;
+	color:gray;
+	padding-top:3px;
+	*/
+	width:36px;
+	height:36px;
+	display:block;
+}
+
+i.fa-user {
+	background-image:url(../../img/username-icon.png);
+}
+
+i.fa-lock {
+	background-image:url(../../img/password-icon.png);
+}
+.login form input.form-control {
+  font-weight: 300;
+  display: block;
+  width: auto;
+  height: auto;
+  border: 1px solid #D8DEE2;
+  outline: none;
+  box-shadow: none;
+  background: none;
+  border-radius: 0px;
+  padding: 10px;
+  width: 100%;
+  background: transparent;
+  color: #c2b8b1;
+}
+.login form input.form-control:focus {
+  
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;  
+}
+.login form button {
+  margin-top: 10px;
+  border: none;
+  font-weight: 300;
+  padding: 5px 0;
+  width: 100%;
+  border-radius: 4px;
+  color: white;
+  /*border-bottom: 4px solid #1e8449;*/
+  /*background: #27AE60;*/
+  background-color:#60b044;
+  
+  background-image:linear-gradient(#8add6d, #60b044);
+	border-color:#5ca941;
+	font-size:1.3em;
+}
+.login form button:hover {
+	background-color:#569e3d;
+	background-image:linear-gradient(#79d858, #569e3d);
+	border-color:#4a993e;
+  /*
+  background: #2fb166;
+  -webkit-animation: hop 1s;
+  animation: hop 1s;
+  */
+}
+
+.login .error {
+	color:#BB0000;
+	font-size: 1.1em;
+	padding-bottom:10px;
+}
+/*
+.float {
+  display: inline-block;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px transparent;
+}
+
+.float:hover, .float:focus, .float:active {
+  -webkit-transform: translateY(-3px);
+  transform: translateY(-3px);
+}
+*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1200px) {
+  .login {
+    width: 600px;
+    font-size: 2em;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .login {
+    margin-top: 2%;
+    width: 600px;
+    font-size: 1.7em;
+  }
+}
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+  .login {
+    margin-top: 1%;
+    width: 550px;
+    font-size: 1.7em;
+    min-height: 0;
+  }
+}
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+  .login {
+    margin-top: 0;
+    width: 500px;
+    font-size: 1.3em;
+    min-height: 0;
+  }
+}
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+  .login {
+    margin-top: 0;
+    width: 400px;
+    font-size: 1em;
+    min-height: 0;
+  }
+  .login h2 {
+    margin-top: 0;
+  }
+}
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {
+  .login {
+    margin-top: 0;
+    width: 200px;
+    font-size: 0.7em;
+    min-height: 0;
+  }
+}

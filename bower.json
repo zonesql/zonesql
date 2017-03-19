@@ -1,0 +1,35 @@
+{
+	"name": "zonesql",
+	"version": "1.0.0",
+	"license": "MIT",
+	"description": "Web based database SQL interface",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/zonesql/zonesql.git"
+	},
+	"homepage": "http://www.zonesql.com",
+	"dependencies": {
+		"dojo": "git://github.com/dojo/dojo.git#1.12.1",
+		"dijit": "git://github.com/dojo/dijit.git#1.12.1",
+		"util": "git://github.com/dojo/util.git#1.12.1",
+		"dgrid": "git://github.com/SitePen/dgrid.git#1.1.0",
+		"dstore": "git://github.com/SitePen/dstore.git#1.1.1",
+		"ace": "git://github.com/ajaxorg/ace-builds.git#1.2.6"
+	},
+	"moduleType": [
+		"amd",
+		"globals"
+	],
+	"keywords": [
+	"zonesql",
+	"sql",
+	"database",
+	"mssql",
+	"mysql"
+	],
+	"authors": [
+		{ "name": "Adam", "homepage": "http://tando.com.au" }
+	],	
+	"private": true,
+	"license": "AGPL-1.0"
+}

@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteRule ^login/ login.php [L]
+RewriteRule ^logout/ login.php?action=logout [L]

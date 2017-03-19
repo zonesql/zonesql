@@ -1,0 +1,226 @@
+@import url(../flat/flat.css);
+@import url(../dijit/themes/claro/Tree.css);
+@import url(../dijit/icons/commonIcons.css);
+@import url(../dgrid/css/dgrid.css);
+
+.pageOverlay {
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1001;
+    display: block;
+}
+ 
+#loadingOverlay {
+    background:  #fff url('../../img/loading.gif') no-repeat center 128px;
+}
+
+#header, #explorer, #results, #settingsDialog, .dijitMenuItemLabel {
+	font-family: tahoma, verdana, robotica, sans-serif;
+    font-size:13px;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow:hidden;
+}
+h1 {
+    float:left;
+    margin: 2px 0 0 0;
+}
+#bodyContainer {
+    width: 100%;
+    height: 100%;
+}
+
+#sql {
+    width:100%;
+	height:500px;
+    font-family:courier;
+}
+
+#results {
+    padding:0;
+	width:200px;
+	height:50%;
+}
+
+.dgrid {
+	height:calc(100% - 72px) !important; /* 50px? + 22px status bar */
+}
+
+.resultsGrid {
+	height:calc(100% - 70px); /* only used before any query is run. 70px: header + status bar */
+}
+
+.resultsGridHidden {
+	visibility:hidden;
+}
+
+.statusBar {
+	background-color:#F0E78C;
+	padding:2px 0px;
+	height:20px;
+	width:100%;
+	float:left;
+}
+
+.statusBar div {
+	float:right;
+	padding:0 5px;
+}
+
+.statusBar div#statusMessage {
+	float:left;
+}
+
+div.statusMessageInfo {
+	margin-left:5px;
+	padding-left:20px;
+	background-image:url('../../img/ok.svg');
+	background-position:0 1px;
+	background-repeat:no-repeat;
+	background-size:16px 16px;
+}
+
+div.statusMessageError {
+	margin-left:5px;
+	padding-left:20px;
+	background-image:url('../../img/error.svg');
+	background-position:0 1px;
+	background-repeat:no-repeat;
+	background-size:16px 16px;
+}
+
+div.statusMessageProcessing {
+	margin-left:5px;
+	padding-left:20px;
+	background-image:url('../../img/loading-small.gif');
+	background-position:0 1px;
+	background-repeat:no-repeat;
+	background-size:16px 16px;
+}
+
+.dgrid-header-row .dgrid-cell {
+	font-weight:normal;
+}
+
+.resultsInfo {
+	color:green;
+	margin-left:10px;
+	padding-left:26px;
+	background-image:url('../../img/ok.svg');
+	background-position:0 1px;
+	background-repeat:no-repeat;
+	line-height:24px;
+	float:left;
+}
+
+.resultsError {
+	color:red;
+	margin-left:10px;
+	padding-left:26px;
+	background-image:url('../../img/error.svg');
+	background-position:0 1px;
+	background-repeat:no-repeat;
+	line-height:24px;
+	float:left;
+}
+
+#resultsTable {
+    border-width:0;
+}
+
+#resultsTable th, #resultsTable td {
+    border:1px solid #999;
+    padding:2px 5px;
+}
+
+#resultsTable {
+    border-collapse: collapse;
+    width:100%;
+}
+
+#resultsTable th {
+    background-color:#eee;
+}
+
+li {
+    cursor:pointer;
+    font-weight:bold;
+}
+#header {
+    /* Gradient effect for all browsers */
+    background-color: #ddd;
+	
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#aaaaaa', GradientType=0);
+    background-image: -moz-linear-gradient(top, #ffffff, #aaaaaa);
+    background-image: -ms-linear-gradient(top, #ffffff, #aaaaaa);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#aaaaaa));
+    background-image: -webkit-linear-gradient(top, #ffffff, #aaaaaa);
+    background-image: -o-linear-gradient(top, #ffffff, #aaaaaa);
+    background-image: linear-gradient(top, #ffffff, #aaaaaa);    
+    background-image: -moz-linear-gradient(center top , #ffffff, #aaaaaa);
+	
+    padding:2px;
+
+}
+
+.type {
+    color:#aaa;
+}
+
+.headerButton {
+    float:right;
+    margin-top:10px;
+	margin-right:8px;
+}
+
+.headerButton img {
+	width:14px;
+	height:14px;
+}
+
+.headerButton .dijitButtonText {
+	vertical-align:top;
+	height:16px;
+}
+
+.headerDropdown {
+    float:right;
+    margin-top:10px;
+	margin-right:10px;
+}
+
+.headerDropdown .dijitSelectLabel {
+    width: 200px;
+	text-align:left;
+}
+
+#connection {
+	float:right;
+}
+
+.dijitDialogPaneContentArea .field {
+	margin-bottom:5px;
+}
+
+.dijitDialogPaneContentArea label {
+	width:110px;
+	text-align:right;
+	display:inline-block;
+	margin-right:10px;
+}
+
+.dijitDialogPaneContentArea .dijitSelect {
+    width:195px;
+}
+
+/* Override so that flat-icons.css doesn't interfere with claro icons we want for tree */
+.claro .dijitIcon:before {
+	content: none !important;
+};
