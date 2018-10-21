@@ -25,39 +25,31 @@ http://www.zonesql.com and click one of the available releases under the
 
 ### Download Source
 
-The ZoneSQL full uncompiled source can be downloaded using the following 2 
-commands. First clone the git repository. This will pull the repo into a 
-zonesql/ directory:
+The ZoneSQL full source can be downloaded using the following command:
 
-    git clone https://github.com/zonesql/zonesql.git
+git clone --recurse-submodules https://github.com/zonesql/zonesql
 
-From here, run the following command to pull down all required third party git 
-repo dependencies such as dojo, ace editor, dgrid etc into the zonesql/src/ 
-directory
+This will clone the ZoneSQL package as full uncompiled source code including 
+all of it's dependency submodules. The submodules are third party repos 
+including dojo, ace editor, dgrid and are cloned into the /src/  directory. 
+The following script is supplied which will use the dojo tool to compile the 
+source js into a /dist/ directory:
 
-    bower install ./zonesql
+/zonesql/src/buildZoneSQL.sh
 
-This will result in a local ZoneSQL installation with full uncompiled source code 
-including all of it's dependencies.  
-
-The following script is also supplied which will use the dojo tool to compile the 
-source js into a zonesql/dist/ directory should you wish to compile your changes:
-
-    zonesql/src/buildZoneSQL.sh
-
-The 'environment' item in the `zonesql/api/config.php` file can be used to switch 
-the ZoneSQL installation between 'development' and 'production', which will use 
-uncompiled zonesql/src/ vs the compiled zonesql/dist/ path respectively.
+The 'environment' property in the /zonesql/api/config.php file can be used to 
+switch the ZoneSQL installation between 'development' and 'production', which 
+will use the uncompiled /src/ or the compiled /dist/ path respectively.
 
 ## Configuration
 
-Once downloaded/installed, ensure the zonesql/ directory is in a web 
+Once downloaded/installed, ensure the /zonesql/ directory is in a web 
 accessible path, or set up an apache alias pointing to this path as required. It
 is STRONGLY recommended this web application is served through a https/SSL 
 connection as highly sensitive information and passwords may be passed through 
 it.
 
-Update the application configuration via the zonesql/api/config.php file. 
+Update the application configuration via the /zonesql/api/config.php file. 
 Detailed information for each setting can be found in the config file comments. 
 Check all settings but in particular ensure the following items are set as 
 necessary. 
