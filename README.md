@@ -27,7 +27,7 @@ http://www.zonesql.com and click one of the available releases under the
 
 The ZoneSQL full source can be downloaded using the following command:
 
-git clone --recurse-submodules https://github.com/zonesql/zonesql
+    git clone --recurse-submodules https://github.com/zonesql/zonesql
 
 This will clone the ZoneSQL package as full uncompiled source code including 
 all of it's dependency submodules. The submodules are third party repos 
@@ -35,7 +35,7 @@ including dojo, ace editor, dgrid and are cloned into the /src/  directory.
 The following script is supplied which will use the dojo tool to compile the 
 source js into a /dist/ directory:
 
-/zonesql/src/buildZoneSQL.sh
+    /zonesql/src/buildZoneSQL.sh
 
 The 'environment' property in the /zonesql/api/config.php file can be used to 
 switch the ZoneSQL installation between 'development' and 'production', which 
