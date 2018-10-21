@@ -19,11 +19,13 @@ authentication are configurable.
 
 ### Download Release
 
-Visit https://zonesql.github.io to download a compiled, optimised release of ZoneSQL.
+To download the latest release, pre-built, optimised and ready for use, visit 
+http://www.zonesql.com and click one of the available releases under the 
+"Download and Installation" section.
 
 ### Download Source
 
-The ZoneSQL full uncompiled  source can be downloaded using the following 2 
+The ZoneSQL full uncompiled source can be downloaded using the following 2 
 commands. First clone the git repository. This will pull the repo into a 
 zonesql/ directory:
 
