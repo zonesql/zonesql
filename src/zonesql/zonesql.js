@@ -104,6 +104,7 @@ function(lang, dom, domClass, domStyle, on, aspect, parser, registry, xhr, JsonR
 					setDatabase(initData);
 				} else {
 					query.type = "data";
+					dom.byId('grid').innerHTML = '';
 					// Now we already have the initData column definitions, we set up the store with the query to return just the grid
 					// data, letting the grid do its natural paging etc. TODO: consolodate these 2 calls (one for column definition, 
 					// second for data into one call)
