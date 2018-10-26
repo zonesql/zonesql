@@ -11,6 +11,8 @@
 session_start();
 $cfg = include('api/config.php');
 
+checkAuthentication($cfg);
+
 use \ZoneSQL\Conn;
 
 /**
@@ -25,10 +27,6 @@ $zoneConfig = array(
 // TODO - Pass this to client via $zoneConfig and have the Dialog inputs
 // set via there to maintain seperation of logic/presentation.
 $conn = Conn::GetConnection($cfg);
-
-// Is user logged in?
-if(getFromArray($cfg, 'authentication') == 'config' && !getFromArray($_SESSION, 'user_authenticated')) 
-	header('Location: ./login/');	
 
 // Set up options for Database dropdown in header
 $options = '';

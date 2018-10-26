@@ -14,7 +14,9 @@ session_start();
 use Slim\Slim;
 use ZoneSQL\Conn;
 
-require 'config.php';
+$cfg = include('config.php');
+
+checkAuthentication($cfg);
 
 $app = new Slim();
 

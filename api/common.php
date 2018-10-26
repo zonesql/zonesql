@@ -8,6 +8,9 @@
  * @package ZoneSQL
  */
 
+define('ROOT_DIR', str_replace('\\', '/', rtrim($_SERVER['DOCUMENT_ROOT'],'/').'/'));
+define('ROOT_WEB', '/' . trim(str_replace(ROOT_DIR, '', str_replace('\\', '/', dirname(dirname(__FILE__)))), '/') . '/');
+
 // Set up Autoloader using PSR-4 standard.
 require_once('lib/ZoneSQL/Psr4Autoloader.php');
 $loader = new Psr4AutoloaderClass();
@@ -19,4 +22,13 @@ function getFromArray($array, $element, $default=null){
 	
 	return isset($array[$element]) && $array[$element] ? $array[$element] : $default;
 	
+}
+
+function checkAuthentication($cfg) {
+	// Is user logged in?
+	if(getFromArray($cfg, 'authentication') == 'config' && !getFromArray($_SESSION, 'user_authenticated')) {
+		session_destroy();
+		header('Location: ' . ROOT_WEB . 'login/');
+		exit;
+	}
 }
