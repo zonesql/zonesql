@@ -8,15 +8,17 @@
  * @package ZoneSQL
  */
 
-define('ROOT_DIR', str_replace('\\', '/', rtrim($_SERVER['DOCUMENT_ROOT'],'/').'/'));
-define('ROOT_WEB', '/' . trim(str_replace(ROOT_DIR, '', str_replace('\\', '/', dirname(dirname(__FILE__)))), '/') . '/');
+//define('ROOT_DIR', str_replace('\\', '/', rtrim($_SERVER['DOCUMENT_ROOT'],'/').'/'));
+//define('ROOT_WEB', '/' . trim(str_replace(ROOT_DIR, '', str_replace('\\', '/', dirname(dirname(__FILE__)))), '/') . '/');
 
 // Set up Autoloader using PSR-4 standard.
 require_once('lib/ZoneSQL/Psr4Autoloader.php');
 $loader = new Psr4AutoloaderClass();
 $loader->register();
 $loader->addNamespace('ZoneSQL', dirname(__FILE__) . '/lib/ZoneSQL');
-$loader->addNamespace('Slim', dirname(__FILE__) . '/lib/Slim');
+$loader->addNamespace('Leaf', dirname(__FILE__) . '/lib/Leaf');
+$loader->addNamespace('\\Leaf\\Http\\Request', dirname(__FILE__) . '/lib/Leaf');
+$loader->addNamespace('Pimple', dirname(__FILE__) . '/lib/Pimple');
 
 function getFromArray($array, $element, $default=null){
 	

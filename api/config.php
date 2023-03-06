@@ -11,6 +11,9 @@
 ini_set('display_errors', 0);
 error_reporting(E_ERROR);
 
+define('ROOT_DIR', '/var/www/zonesql/html/');
+define('ROOT_WEB', '/');
+
 require_once 'common.php';
 
 $cfg = array(
@@ -18,7 +21,8 @@ $cfg = array(
 // ---------- CONFIGURABLE SECTION: START ----------
 
 // ADODB or PDO
-'db_interface'			=> 'ADODB',
+//'db_interface'			=> 'ADODB',
+'db_interface'				=> 'PDO',
 
 // Set the authentication method to access zonesql. 
 // config - username and password are specified in the config file
@@ -38,17 +42,24 @@ EXAMPLE CONNECTION:
 'connections' => array (
 	array(
 		'title'			=> 'My Connection', 
-		'type'			=> 'mssql',			// Options: mssql, mysql or sqlite3
-		'host'			=> 'localhost',		// Server Hostname or IP
-		'port'			=> 1433,			// Database port. Can omit if it is default.
-		'database'		=> 'MyDatabase',	// The database to connect to
-		'username'		=> 'username',		// Database Username
-		'password'		=> 'password'		// Database Password
+		'type'			=> 'mysql',			// Options: mssql, mysql or sqlite3
+		'host'			=> 'dbhost',		// Server Hostname or IP
+		'port'			=> 3306,			// Database port. Can omit if it is default.
+		'database'		=> 'tando',	// The database to connect to
+		'username'		=> 'dbuser',		// Database Username
+		'password'		=> 'dbpass'		// Database Password
 	)
 ),
 */
 'connections' => array (
 	array(
+		'title'			=> 'My Connection', 
+		'type'			=> 'mysql',			// Options: mssql, mysql or sqlite3
+		'host'			=> '',		// Server Hostname or IP
+		'port'			=> 3306,			// Database port. Can omit if it is default.
+		'database'		=> '',	// The database to connect to
+		'username'		=> '',		// Database Username
+		'password'		=> ''		// Database Password
 	)
 ),
 	

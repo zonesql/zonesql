@@ -21,8 +21,8 @@ if(getFromArray($_GET, 'action') == 'logout') {
 }
 
 $isPost = isset($_POST['login']);
-$user = trim(getFromArray($_POST, 'username'));
-$pass = trim(getFromArray($_POST, 'password'));
+$user = getFromArray($_POST, 'username') ? trim(getFromArray($_POST, 'username')) : '';
+$pass = getFromArray($_POST, 'password') ? trim(getFromArray($_POST, 'password')) : '';
 $cfgUser = getFromArray($cfg, 'username');
 $cfgPass = getFromArray($cfg, 'password');
 

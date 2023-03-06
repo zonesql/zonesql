@@ -349,9 +349,8 @@ function(lang, dom, domClass, domStyle, on, aspect, parser, registry, xhr, JsonR
         getChildren: function(object){
             // object may just be stub object, so get the full object first and then return it's
             // list of children
-			
-            return this.get(object.id).then(function(fullObject){
-                return fullObject.children;
+			return this.get(object.id).then(function(object){
+                return object.children ? object.children : object[0].children;
             });
         }
     });
@@ -380,15 +379,15 @@ function(lang, dom, domClass, domStyle, on, aspect, parser, registry, xhr, JsonR
 				this.error = true;
 				args.label = 'Disconnected';
 			}
-			//console.debug('createtreenote args: ', args);
-			
+		
 			return new MyTreeNode(args);
         },
         persist: false,
 
         getIconClass: function(/*dojo.storeItem*/ item, /*BooLean*/ opened){
-			if(this.error)
+			if(this.error) {
 				return 'dijitIconConnector';
+			}
 
             // Calculate the depth the node is in the tree, to assist in selecting the icon
             var treeDepth = (item.id.match(/\//g) || []).length;

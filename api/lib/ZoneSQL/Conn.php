@@ -235,7 +235,7 @@ class Conn {
 	
 	protected function GetRowCount($sql) {
 		$row = array();
-		$sql = "SELECT COUNT(*) as total FROM (" . $sql . ") sql";
+		$sql = "SELECT COUNT(*) total FROM (" . $sql . ") sq";
 		try {
 			$this->db->query($sql);
 			$row = $this->db->fetch();
@@ -277,10 +277,10 @@ class Conn {
 	public static function GetConnection($cfg, $database=null) {
 		
 		$conn = Conn::GetSessionConnection();
-		
+		//error_log('conn: ' . var_export($conn, true));
 		if($database)
 			$conn['database'] = $database;
-		
+		//error_log('database: ' . $database);
 		if(!$conn && strpos($cfg['connection_methods'], 'config') !== false) {
 			
 			$conn = isset($cfg['connections'][0]) ? $cfg['connections'][0] : null;

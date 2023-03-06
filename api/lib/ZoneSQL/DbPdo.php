@@ -19,21 +19,27 @@ class DbPdo implements iDb {
      */
     public function __construct($conn) {
 
-        $this->db = new PDO($conn['type'] . ':host=' . $conn['host'] . ';dbname=' . $conn['database'], $conn['username'], $conn['password'] );
-        $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $this->db = new \PDO($conn['type'] . ':host=' . $conn['host'] . ';dbname=' . $conn['database'], $conn['username'], $conn['password'] );
+        $this->db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 
     }
 
     public function query($sql=null) {
+        try {
+            $this->stmt = $this->db->prepare($sql);
 
-        $this->stmt = $this->db->prepare($sql);
-        $this->stmt->execute(); 
+            $this->stmt->execute(); 
+        } catch (\PDOException $e) {
+
+            throw new Exception("Error: " . $e->getMessage());
+
+        }
 
     }
 
     public function fetch() {
 
-        $row = $this->stmt->fetch(PDO::FETCH_ASSOC);
+        $row = $this->stmt->fetch(\PDO::FETCH_ASSOC);
         return $row;
 
     }
