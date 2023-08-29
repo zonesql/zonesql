@@ -15,6 +15,10 @@ featured rich dynamic grid output. The product is useful for setting up direct
 access to databases at remote sites via simple web based access. Security and 
 authentication are configurable.
 
+## Live Demo
+
+https://demo.zonesql.com
+
 ## Download and Installation
 
 ### Download Release
